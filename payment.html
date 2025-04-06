@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html ng-app="paymentApp">
+<head>
+    <title>Payment</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <style>
+        body {
+            background-color: #f0f8ff; /* Light Alice Blue */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #005f73; /* Dark Teal */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        div {
+            border: 1px solid #ccc; /* Light Gray */
+            margin: 40px auto;
+            background-color: #e0f7fa; /* Light Cyan */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            max-width: 500px; /* Center the form */
+        }
+
+        input[type="radio"] {
+            margin: 10px 0;
+        }
+
+        input[type="text"], input[type="submit"] {
+            padding: 12px;
+            width: 90%; /* Slightly wider input fields */
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus {
+            border-color: #008CBA; /* Blue border on focus */
+            outline: none; /* Remove default outline */
+        }
+
+        input[type="submit"] {
+            background-color: #008CBA; /* Blue */
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            font-weight: bold;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #005f73; /* Darker Blue */
+            transform: scale(1.05); /* Slightly enlarge on hover */
+        }
+
+        img {
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body ng-controller="PaymentController">
+    <center>
+        <h1>Payment Process</h1>
+        <div>
+            <form ng-submit="processPayment()">
+                <label for="select">Select payment mode</label><br>
+                <input type="radio" id="upi" name="paymentMode" ng-model="paymentMode" value="UPI" required><label for="upi">UPI</label><br>
+                <input type="radio" id="net" name="paymentMode" ng-model="paymentMode" value="Net Banking" required><label for="net">Net Banking</label><br>
+                <input type="radio" id="cod" name="paymentMode" ng-model="paymentMode" value="Offline payment" required><label for="cod">Offline payment</label><br>
+                <label for="card">Card Number</label><br>
+                <input type="text" id="card" ng-model="cardNumber" required placeholder="Enter your card number"><br>
+                <label for="cvv">CVV Number</label><br>
+                <input type="text" id="cvv" ng-model="cvvNumber" required placeholder="Enter your CVV"><br>
+                <input type="submit" value="OK"><br>
+            </form>
+        </div>
+        <img src="pay.jpg" alt="Payment" height="400" width="600">
+    </center>
+
+    <script>
+        var app = angular.module('paymentApp', []);
+        app.controller('PaymentController', ['$scope', '$window', function($scope, $window) {
+            $scope.paymentMode = '';
+            $scope.cardNumber = '';
+            $scope.cvvNumber = '';
+
+            $scope.processPayment = function() {
+                // Here you can add any payment processing logic if needed
+                // Redirect to thankyou.html
+                $window.location.href = 'thankyou.html';
+            };
+        }]);
+    </script>
+</body>
+</html>
