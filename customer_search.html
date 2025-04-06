@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html ng-app="driverApp">
+<head>
+    <title>Source and Destination</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <style>
+        body {
+            background-color: lightblue;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: #005f73;
+            text-align: center;
+        }
+
+        p {
+            font-family: verdana;
+            font-size: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        form {
+            text-align: center;
+        }
+
+        input[type="text"], input[type="submit"] {
+            padding: 10px;
+            width: 80%;
+            margin: 8px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #005f73;
+        }
+
+        img {
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body ng-controller="DriverController">
+    <center>
+        <h1>Please enter source and destination to find available drivers</h1>
+        <form ng-submit="findDrivers()">
+            <label for="source">Enter Source</label><br>
+            <input type="text" id="source" ng-model="source" required><br>
+            <label for="destination">Enter Destination</label><br>
+            <input type="text" id="destination" ng-model="destination" required><br>
+            <input type="submit" value="Find Drivers">
+        </form>
+        <img src="location.jpg" alt="Carpooling" height="300" width="600">
+    </center>
+
+    <script>
+        var app = angular.module('driverApp', []);
+        app.controller('DriverController', ['$scope', '$window', function($scope, $window) {
+            $scope.source = '';
+            $scope.destination = '';
+
+            $scope.findDrivers = function() {
+                // Redirect to find_drivers.html
+                $window.location.href = 'find_drivers.html';
+            };
+        }]);
+    </script>
+</body>
+</html>
