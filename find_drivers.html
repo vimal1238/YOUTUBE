@@ -1,0 +1,193 @@
+find_drivers.html
+
+<html>
+<head>
+<title>Finding Drivers</title>
+<style>
+body {
+    background-color: #f0f4f8;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.driver-container {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    transition: transform 0.2s;
+}
+
+.driver-container:hover {
+    transform: translateY(-5px);
+}
+
+.driver-info {
+    margin-bottom: 15px;
+    color: #34495e;
+}
+
+.driver-info label {
+    display: block;
+    margin: 5px 0;
+    font-size: 1.1em;
+}
+
+.available {
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.price {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+th {
+    background-color: #3498db;
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    letter-spacing: 0.5px;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+tr:hover {
+    background-color: #e9ecef;
+}
+
+input[type="submit"] {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+.passenger-title {
+    color: #2c3e50;
+    font-size: 1.3em;
+    margin: 20px 0 10px;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+}
+</style>
+</head>
+<body>
+<h1>Available Drivers</h1>
+
+<div class="driver-container">
+    <form action="payment.html">
+        <div class="driver-info">
+            <label><strong>Driver 1:</strong> John</label>
+            <label><strong>Phone:</strong> 1234567890</label>
+            <label><strong>Pick-up Point:</strong> RTC Complex</label>
+            <label><strong>Date & Time:</strong> March 11, 2025 - 1:00 PM</label>
+            <label class="price"><strong>Price:</strong> ₹1000</label>
+            <label class="available"><strong>Availability:</strong> 2 seats</label>
+        </div>
+        <input type="submit" value="Book Now">
+    </form>
+
+    <div class="passenger-title">Passenger List</div>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td>Arjun</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>Karthik</td>
+            <td>28</td>
+        </tr>
+        <tr>
+            <td>Jack</td>
+            <td>39</td>
+        </tr>
+    </table>
+</div>
+
+<div class="driver-container">
+    <form action="payment.html">
+        <div class="driver-info">
+            <label><strong>Driver 2:</strong> Fernandus</label>
+            <label><strong>Phone:</strong> 0987654321</label>
+            <label><strong>Pick-up Point:</strong> Jadadamba</label>
+            <label><strong>Date & Time:</strong> March 12, 2025 - 4:00 PM</label>
+            <label class="price"><strong>Price:</strong> ₹1200</label>
+            <label class="available"><strong>Availability:</strong> 1 seat</label>
+        </div>
+        <input type="submit" value="Book Now">
+    </form>
+
+    <div class="passenger-title">Passenger List</div>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td>Fin</td>
+            <td>34</td>
+        </tr>
+        <tr>
+            <td>Jones</td>
+            <td>28</td>
+        </tr>
+        <tr>
+            <td>Arandus</td>
+            <td>39</td>
+        </tr>
+        <tr>
+            <td>Vikram</td>
+            <td>41</td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>
